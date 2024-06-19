@@ -1,0 +1,35 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+input, textarea {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f4f4f4;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
