@@ -1,7 +1,12 @@
 const express = require("express");
 const redis = require("redis");
+const cors = require("cors");
+const { oAuth2Client, saveToken } = require("./googleAuth");
+const createEvent = require("./createEvent");
+const { getAccessToken } = require("./googleAuth");
 
 const app = express();
+app.use(cors());
 const client = redis.createClient();
 
 client.on("error", (err) => {
@@ -13,6 +18,11 @@ client.on("connect", () => {
 });
 
 app.use(express.json());
+
+app.get("/api/auth", (req, res) => {
+  getAccessToken();
+  res.send("Check your console for the authorization URL");
+});
 
 app.post("/api/addNote", async (req, res) => {
   const { title, content } = req.body;
@@ -69,6 +79,25 @@ app.get("/api/fetchNotes", async (req, res) => {
 // Add a test route to ensure the server is running
 app.get("/api/test", (req, res) => {
   res.status(200).json({ message: "Server is running!" });
+});
+
+app.post("/api/testAddNoteToCal", async (req, res) => {
+  const note = req.body;
+  try {
+    await createEvent(note);
+    res.status(200).send("Note added and event created in Google Calendar");
+  } catch (error) {
+    console.error("Error adding note or creating event:", error);
+    res.status(500).send("Error adding note or creating event");
+  }
+});
+
+app.get("/api/oauth2callback", async (req, res) => {
+  const { code } = req.query;
+  const { tokens } = await oAuth2Client.getToken(code);
+  oAuth2Client.setCredentials(tokens);
+  saveToken(tokens);
+  res.send("Authorization successful. You can close this window.");
 });
 
 const PORT = process.env.PORT || 3001;

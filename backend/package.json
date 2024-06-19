@@ -10,7 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.19.2",
+    "fs": "0.0.1-security",
+    "googleapis": "^140.0.0",
+    "path": "^0.12.7",
     "redis": "^4.6.14"
   }
 }
