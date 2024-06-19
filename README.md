@@ -1,30 +1,14 @@
-# React + TypeScript + Vite
+# recuerdame
+mentor app that reminds you of your ideas, learning, tasks, appointments, syncs with your calendar and motivates you do do better, prioritize, see different perspectives and remember what is important playing back your own voice
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+this is a seed project that will be created in stages testing each technology at the time
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. create a simple node app that stores locally key value pairs in memory using redis
+2. sync with google calendar api to sync with google calendar
+3. sync with google speech api to sync with google speech
+4. sync with google vision api to sync with google vision
+5. sync with google maps
+6. sync with openai api
+7. implement app logic layer to create units of memories "bricks"
+8. implement app logic to be able to compose memory narratives: intents, goals, tasks, dates, priorities and results 
+9. implement frontend to visualize memory units revealing its relationships in an intuitive way to see intented results from different perspectives and motivating you to do better based on your own voice, narratives and measurable outcomes
