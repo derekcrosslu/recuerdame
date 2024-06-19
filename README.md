@@ -1,1 +1,2 @@
 # recuerdame
+mentor app that reminds you of your ideas, learning, tasks, appointments, syncs with your calendar and motivates you do do better, prioritize, see different perspectives and remember what is important playing back your own voice
